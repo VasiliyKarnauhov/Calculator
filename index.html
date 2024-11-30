@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <script>
+        function discription() {
+            console.log('Добро пожаловать!')
+            console.log('Это калькулятор!')
+            console.log('Давай начнём наши вычисления')
+        }
+        const calculator = {
+            sum(a,b) {
+                return a + b
+            },
+            minus(a,b) {
+                return a - b
+            },
+            sumX(a,b) {
+                return a * b
+            },
+            minusX(a,b) {
+                if(b === 0) {
+                    console.log('Ошибка! На ноль делить нельзя');
+                    return null
+                }
+                return a / b
+            }
+        }
+        discription();
+
+        function promptUser() {
+            const operation = prompt('Выбери операцию(sum, minus, sumX, minusX): ');
+            const input1 = prompt('Выбери первое число: ');
+            const num1 = parseFloat(input1);
+            const input2 = prompt('Выбери второе число: ');
+            const num2 = parseFloat(input2);     
+
+            let result;
+            switch (operation) {
+                case 'sum':
+                    result = calculator.sum(num1,num2);
+                    break;
+                case 'minus':
+                    result = calculator.minus(num1,num2);
+                    break;
+                case 'sumX':
+                    result = calculator.sumX(num1,num2);
+                    break;
+                case 'minusX':
+                    result = calculator.minusX(num1,num2);
+                    break;            
+            }
+            alert(`Результат: ${result}`);
+        }
+        promptUser();
+    </script>
+</head>
+<body>
+</body>
+</html>
